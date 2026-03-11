@@ -1,0 +1,16 @@
+#1(c)
+import cv2
+from google.colab.patches import cv2_imshow
+
+# Read image
+img = cv2.imread("canny_image.png")
+
+# Convert to grayscale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Apply Canny Edge Detection
+edges = cv2.Canny(gray, 100, 200)
+
+# Display
+cv2_imshow(img)
+cv2_imshow(edges)
