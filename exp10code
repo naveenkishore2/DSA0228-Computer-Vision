@@ -1,0 +1,13 @@
+#exp-10 Perform Transformation using Homography Matrix
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow # Import cv2_imshow
+
+# Read image
+img = cv2.imread("flower_image.png")
+
+# Source points
+pts_src = np.float32([[50,50],[200,50],[50,200],[200,200]])
+…# Display images
+cv2_imshow(img)
+cv2_imshow(result)
