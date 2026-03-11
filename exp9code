@@ -1,0 +1,17 @@
+#exp-9 Perspective Transformation on Video
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow # Import cv2_imshow for image display
+
+cap = cv2.VideoCapture("video.mp4")
+
+pts1 = np.float32([[0,0],[300,0],[0,300],[300,300]])
+pts2 = np.float32([[0,0],[250,50],[50,250],[300,300]])
+
+…    # cv2_imshow can display individual frames, but not a continuous video.
+    cv2_imshow(result)
+
+    # cv2.waitKey and cv2.destroyAllWindows are not needed with cv2_imshow
+    # and can cause issues if not run in a proper GUI environment for video.
+    # if cv2.waitKey(30) & 0xFF == ord('q'):
+    #                        break
