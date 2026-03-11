@@ -1,0 +1,17 @@
+exp-5. Image Rotation (Clockwise & Counterclockwise)
+import cv2
+from google.colab.patches import cv2_imshow # Import cv2_imshow
+
+img = cv2.imread("canny_image.png")
+
+# Check if image was loaded successfully
+if img is None:
+    print("Error: Could not load image. Please check the file path.")
+else:
+    rows, cols = img.shape[:2]
+
+    M = cv2.getRotationMatrix2D((cols/2, rows/2), 75, 1)
+    rotated = cv2.warpAffine(img, M, (cols, rows))
+
+    cv2_imshow(img)
+    cv2_imshow(rotated)
