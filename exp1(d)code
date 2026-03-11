@@ -1,0 +1,17 @@
+#1-(d)
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow
+
+# Read image
+img = cv2.imread("flower_image.png")
+
+# Create kernel
+kernel = np.ones((5,5), np.uint8)
+
+# Apply dilation
+dilation = cv2.dilate(img, kernel, iterations=1)
+
+# Display
+cv2_imshow(img)
+cv2_imshow(dilation)
