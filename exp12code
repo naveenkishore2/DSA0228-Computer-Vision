@@ -1,0 +1,9 @@
+#exp-12 Canny Edge Detection
+import cv2
+from google.colab.patches import cv2_imshow
+
+img = cv2.imread("canny_image.png",0)
+
+edges = cv2.Canny(img,100,200)
+
+cv2_imshow(edges)
