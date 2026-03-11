@@ -1,0 +1,17 @@
+import cv2
+from google.colab.patches import cv2_imshow
+
+cap = cv2.VideoCapture("Screen Recording 2025-12-07 163107.mp4")
+
+# Display a few frames as an example
+print("Displaying the first 5 frames:")
+for i in range(5):
+    ret, frame = cap.read()
+    if not ret:
+        print(f"Could not read frame {i+1}. End of video or error.")
+        break
+    print(f"Frame {i+1}:")
+    cv2_imshow(frame)
+
+cap.release()
+print("Finished displaying frames.")
