@@ -1,0 +1,11 @@
+#exp-11 Perform Transformation using (DLT
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow # Import cv2_imshow
+
+# Read image
+img = cv2.imread("canny_image.png")
+
+# Define four points
+pts1 = np.float32([[0,0],[300,0],[0,300],[300,300]])
+…cv2_imshow(output)
