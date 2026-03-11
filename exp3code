@@ -1,0 +1,17 @@
+#exp(3)Capture Video from Webcam
+import cv2
+from google.colab.patches import cv2_imshow # Import cv2_imshow
+
+cap = cv2.VideoCapture(0)
+
+# Note: cv2_imshow is primarily for displaying static images.
+# Live video streaming with a webcam via cv2_imshow in a loop
+# will not function like cv2.imshow in a local GUI environment.
+# It will likely display individual frames in the output or only the last frame captured.
+…    # and can cause issues if not run in a proper GUI environment.
+    # For displaying a series of frames in Colab, you would typically capture a set
+    # of frames and display them one by one, or create a video from them.
+    # if cv2.waitKey(30) & 0xFF == ord('q'):
+    #                 break
+
+cap.release()
