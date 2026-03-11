@@ -1,0 +1,17 @@
+#exp 8 Perspective Transformation (Image)
+import cv2
+import numpy as np
+from google.colab.patches import cv2_imshow # Import cv2_imshow
+
+img = cv2.imread("flower_image.png")
+
+rows, cols = img.shape[:2]
+
+pts1 = np.float32([[0,0],[300,0],[0,300],[300,300]])
+pts2 = np.float32([[0,0],[250,50],[50,250],[300,300]])
+
+M = cv2.getPerspectiveTransform(pts1, pts2)
+
+result = cv2.warpPerspective(img, M, (cols, rows))
+
+cv2_imshow(result)
